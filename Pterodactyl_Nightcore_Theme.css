@@ -7,6 +7,29 @@ html {
   background-color: transparent;
 }
 
+/* Untuk perangkat dengan lebar hingga 1024px (tablet dan mobile) */
+@media (max-width: 1024px) {
+  html {
+    background-image: url("https://raw.githubusercontent.com/SatganzDevs/pterodactylthemes/main/bg-phone.jpg");
+  }
+  div.w-full.bg-neutral-900.shadow-md.overflow-x-auto,
+  div.App___StyledDiv-sc-2l91w7-0.fnfeQw {
+    background-image: url("https://raw.githubusercontent.com/SatganzDevs/pterodactylthemes/main/bg-phone.jpg");
+  }
+}
+
+/* Untuk perangkat dengan lebar hingga 480px (mobile kecil) */
+@media (max-width: 480px) {
+  html {
+    background-image: url("https://raw.githubusercontent.com/SatganzDevs/pterodactylthemes/main/bg-phone.jpg");
+  }
+  div.w-full.bg-neutral-900.shadow-md.overflow-x-auto,
+  div.App___StyledDiv-sc-2l91w7-0.fnfeQw {
+    background-image: url("https://raw.githubusercontent.com/SatganzDevs/pterodactylthemes/main/bg-phone.jpg");
+  }
+}
+
+
 ::-webkit-scrollbar {width: 10px !important;}
 ::-webkit-scrollbar-track{background: #36393F !important;}
 ::-webkit-scrollbar-thumb{background: #727272 !important;border-radius: 10px !important;}
