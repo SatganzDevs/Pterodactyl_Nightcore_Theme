@@ -1,10 +1,25 @@
-html {
+  html {
   background-image: url("https://raw.githubusercontent.com/SatganzDevs/pterodactylthemes/main/bg.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-color: transparent;
+}
+
+
+/* Untuk perangkat dengan lebar hingga 1024px (tablet dan mobile) */
+@media (max-width: 1024px) {
+  html {
+    background-image: url("https://raw.githubusercontent.com/SatganzDevs/pterodactylthemes/main/bg-phone.jpg");
+  }
+}
+
+/* Untuk perangkat dengan lebar hingga 480px (mobile kecil) */
+@media (max-width: 480px) {
+  html {
+    background-image: url("https://raw.githubusercontent.com/SatganzDevs/pterodactylthemes/main/bg-phone.jpg");
+  }
 }
 
 ::-webkit-scrollbar {width: 10px !important;}
