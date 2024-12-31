@@ -39,27 +39,15 @@ installTheme(){
     curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - > /dev/null 2>&1
     apt update -y > /dev/null 2>&1
     apt install nodejs -y > /dev/null 2>&1
-    
-    NODE_VERSION=$(node -v)
-    REQUIRED_VERSION="v16.20.2"
-    if [ "$NODE_VERSION" != "$REQUIRED_VERSION" ]; then
-        echo -e "${GREEN}Node.js version is not ${YELLOW}${REQUIRED_VERSION}${GREEN}. Version: ${YELLOW}${NODE_VERSION}${RESET}"
-        echo -e "${GREEN}Set version to ${YELLOW}v16.20.2${GREEN}... ${RESET}"
-        sudo npm install -g n > /dev/null 2>&1
-        sudo n 16 > /dev/null 2>&1
-        node -v > /dev/null 2>&1
-        npm -v > /dev/null  2>&1
-        echo -e "${GREEN}Now the default version is ${YELLOW}${REQUIRED_VERSION}"
-    else
-        echo -e "${GREEN}Node.js Version is compatible: ${YELLOW}${NODE_VERSION} ${RESET}"
-    fi
 
+    
     apt install npm -y > /dev/null 2>&1
     npm i -g yarn > /dev/null 2>&1
     yarn > /dev/null 2>&1
 
     cd /var/www/pterodactyl > /dev/null 2>&1
     echo -e "${GREEN}Rebuilding the Panel...${RESET}"
+    export NODE_OPTIONS=--openssl-legacy-provider > /dev/null 2>&1
     yarn build:production > /dev/null 2>&1
     echo -e "${GREEN}Optimizing the Panel...${RESET}"
     sudo php artisan optimize:clear > /dev/null 2>&1
